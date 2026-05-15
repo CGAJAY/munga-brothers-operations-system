@@ -20,7 +20,6 @@
 - **Database**: MongoDB
 - **Authentication**: JWT + HTTP-only cookies (Admin & Manager only)
 - **SMS Integration**: Africa's Talking API
-- **File Storage**: Cloudinary / AWS S3 (for proof of delivery photos)
 - **Hosting**: Render & Vercel
 
 ## 3. Key Business Rules
@@ -28,7 +27,6 @@
 - One driver and one truck can be assigned to only **one active delivery** at a time.
 - Managers handle all dispatching.
 - Delivery status workflow: `Pending` → `Assigned` → `In Transit` → `Delivered` → `Completed` / `Cancelled`
-- Proof of delivery (photo) must be uploaded by Manager.
 - All actions are audited.
 
 ## 4. MongoDB Collections (Schema Overview)
@@ -40,7 +38,6 @@
 - **Deliveries**
 - **OrderItems**
 - **SMSLogs**
-- **ActivityLogs**
 
 *(Read the full Mongoose at [System Design](DB_SCHEMA.js))*
 
@@ -62,7 +59,7 @@
 2. Manager goes to Dispatch → Assigns Driver + Truck
 3. System creates Delivery record + sends **SMS** to Driver
 4. Driver carries out delivery
-5. Manager updates status to "In Transit" / "Delivered" and uploads proof photo
+5. Manager updates status to "In Transit" / "Delivered" 
 6. System completes delivery and sends confirmation SMS to Driver
 
 ## 7. Non-Functional Requirements
@@ -91,7 +88,6 @@
 ## 10. Assumptions & Constraints
 
 - Drivers do not need system login (only SMS)
-- Proof of delivery will be uploaded by Manager
 - Internet required for Managers to update status
 - Phase 1 does not include GPS tracking or mobile app
 
