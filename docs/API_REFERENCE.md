@@ -1,4 +1,4 @@
-# Munga & Brothers API Documentation (Updated)
+# Munga & Brothers API Documentation
 
 **Base URL**: `/api/v1`
 

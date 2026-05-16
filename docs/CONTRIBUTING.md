@@ -46,43 +46,18 @@ This project follows a **modified Git Flow** strategy suitable for production sy
 
 ### 3. Submitting Code Changes (Pull Requests)
 
-1. **Pull latest code**
-   ```bash
-   git checkout dev
-   git pull origin dev
-    ```
-# Contributing to Munga & Brothers Operations System
-
-Thank you for considering contributing to the **Munga & Brothers Supplies Digital Operations & Logistics Management System**.
-
-## Code of Conduct
-
-We expect all contributors to be respectful, professional, and collaborative. Harassment or offensive behavior will not be tolerated.
-
-## Ways to Contribute
-
-### 1. Reporting Bugs
-- Use the Bug Report issue template
-- Include clear steps to reproduce the issue
-- Mention your environment (Node.js version, browser, OS)
-- Provide screenshots if applicable
-
-### 2. Suggesting Features or Improvements
-- Use the Feature Request issue template
-- Clearly explain the problem and proposed solution
-- Describe the business value for Munga & Brothers
-
-### 3. Submitting Code Changes (Pull Requests)
-
 1. Fork the repository
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Make your changes
-4. Test your changes thoroughly
-5. Commit using Conventional Commit format
-6. Push your branch and open a Pull Request
+2. Create a new branch from `dev`:
+    ```bash
+    git checkout -b feature/your-feature-name dev
+    ```
+3. Make your changes, following coding standards
+4. Commit with a clear message (see below)
+5. Push to your fork and open a Pull Request against `dev`  
+6. Fill out the PR template, describing your changes and any testing done
+7. Address any feedback from reviewers
+8. Once approved, your PR will be merged into `dev` and deployed to staging for testing before eventually being merged into `main` for production release.
+
 
 ## Development Setup
 
