@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { MarketingLayout } from "@/components/marketing/MarketingLayout";
+import { HeroSection } from "@/components/marketing/home/HeroSection";
+import { CtaSection } from "@/components/marketing/home/CtaSection";
+import { WhyUsSection } from "@/components/marketing/home/WhyUsSection";
+import { ServicesStrip } from "@/components/marketing/home/ServicesStrip";
 
 
 export const metadata: Metadata = {
@@ -15,7 +19,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <MarketingLayout>
-      <h1 className="text-4xl font-bold text-center mt-20">Welcome to Munga & Brothers</h1>
+      <HeroSection />
+      <CtaSection />
+      <WhyUsSection />
+      <ServicesStrip />
     </MarketingLayout>
   );
 }
