@@ -10,13 +10,13 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src={hero}
-          alt=""
+          alt=" Construction site with machinery and materials"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-secondary/70 to-secondary/40" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40 text-secondary-foreground">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
