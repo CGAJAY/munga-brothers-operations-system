@@ -1,4 +1,6 @@
 import express from "express";
+import { NotFoundError } from "./errors";
+import { errorHandler } from "./middleware";
 
 const app = express();
 
@@ -12,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 /**
  * =========================
- * HEALTH CHECK ROUTE
+ * HEALTH CHECK
  * =========================
  */
 app.get("/health", (req, res) => {
@@ -24,23 +26,26 @@ app.get("/health", (req, res) => {
 
 /**
  * =========================
- * API ROUTES (REGISTER HERE LATER)
+ * ROUTES (REGISTER LATER)
  * =========================
-// app.use("/api/v1/orders", orderRoutes);
-// app.use("/api/v1/drivers", driverRoutes);
-// app.use("/api/v1/auth", authRoutes);
  */
+// app.use("/api/v1/orders", orderRoutes);
+// app.use("/api/v1/auth", authRoutes);
 
 /**
  * =========================
- * 404 HANDLER
+ * 404 HANDLER (CATCH ALL)
  * =========================
  */
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: "Route not found",
-  });
+app.all("*", (req, res, next) => {
+  next(new NotFoundError());
 });
+
+/**
+ * =========================
+ * GLOBAL ERROR HANDLER
+ * =========================
+ */
+app.use(errorHandler);
 
 export default app;
