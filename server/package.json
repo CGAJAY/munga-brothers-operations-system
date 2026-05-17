@@ -1,0 +1,33 @@
+{
+  "name": "munga-brothers-server",
+  "version": "1.0.0",
+  "description": "Backend API for Munga & Brothers Supplies Digital Operations & Logistics System",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "logistics",
+    "dispatch",
+    "inventory",
+    "express",
+    "typescript",
+    "monga-brothers"
+  ],
+  "author": "John Mugendi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.8.0",
+    "tsx": "^4.22.1",
+    "typescript": "^6.0.3"
+  }
+}
