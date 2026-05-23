@@ -1,51 +1,61 @@
 import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import compression from "compression";
+import cookieParser from "cookie-parser";
+import morgan from "morgan";
+
 import { NotFoundError } from "./errors";
 import { errorHandler } from "./middleware";
 
-const app = express();
+const app = express(); // Create Express app instance
 
-/**
- * =========================
- * CORE MIDDLEWARES
- * =========================
- */
+// Security headers
+app.use(helmet()); // Helps secure Express apps by setting various HTTP headers
+
+// Enable CORS
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
+
+// Parse cookies
+app.use(cookieParser());
+
+// Compress responses
+app.use(compression());
+
+// HTTP request logger
+app.use(morgan("dev"));
+
+// Parse JSON and URL-encoded bodies
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-/**
- * =========================
- * HEALTH CHECK
- * =========================
- */
-app.get("/health", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "API is healthy 🚀",
-  });
+// Parse URL-encoded bodies (for form submissions)
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+// Basic route for testing
+app.get("/", (req, res) => {
+  res.send("Welcome to Munga & Brothers Supplies API!");
 });
 
-/**
- * =========================
- * ROUTES (REGISTER LATER)
- * =========================
- */
-// app.use("/api/v1/orders", orderRoutes);
+// TODO: Add your API routes here
 // app.use("/api/v1/auth", authRoutes);
+// app.use("/api/v1/orders", orderRoutes);
 
-/**
- * =========================
- * 404 HANDLER (CATCH ALL)
- * =========================
- */
-app.all("*", (req, res, next) => {
+
+// Handle 404 for undefined routes
+app.use((req, res, next) => {
   next(new NotFoundError());
 });
 
-/**
- * =========================
- * GLOBAL ERROR HANDLER
- * =========================
- */
+// Global error handler
 app.use(errorHandler);
 
 export default app;

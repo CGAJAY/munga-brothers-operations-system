@@ -2,6 +2,8 @@ import { JwtPayload } from "jsonwebtoken";
 
 export type SameSite = boolean | "none" | "strict" | "lax" | undefined;
 
+export type UserRole = "Admin" | "Manager";
+
 export interface ISerializedError {
   message: string;
   field?: string;

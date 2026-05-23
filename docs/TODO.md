@@ -1,8 +1,8 @@
 # Munga & Brothers Supplies — Project TODO
 
 ## 1. PROJECT SETUP
-- [ ] Initialize project repository (frontend + backend structure)
-- [ ] Set up monorepo or separate repos (Next.js + Express)
+- [x] Initialize project repository (frontend + backend structure)
+- [x] Set up monorepo or separate repos (Next.js + Express)
 - [ ] Configure environment variables (.env)
 - [ ] Set up MongoDB database
 - [ ] Define base architecture (folders, modules, services)
@@ -27,7 +27,7 @@
 ---
 
 ## 3. UI/UX DESIGN
-- [ ] Create marketing website wireframes
+- [x] Create marketing website wireframes
 - [ ] Design dashboard layout (admin/operations)
 - [ ] Design driver interface screens
 - [ ] Design dispatch workflow screens
@@ -37,14 +37,14 @@
 ---
 
 ## 4. MARKETING WEBSITE (PUBLIC)
-- [ ] Build Home page
-- [ ] Build About page
-- [ ] Build Services page
-- [ ] Build Contact page
+- [x] Build Home page
+- [x] Build About page
+- [x] Build Services page
+- [x] Build Contact page
 - [ ] Implement Quote Request form
-- [ ] Add SEO basics (meta tags, sitemap)
-- [ ] Make fully mobile responsive
-- [ ] Deploy marketing website
+- [x] Add SEO basics (meta tags, sitemap)
+- [x] Make fully mobile responsive
+- [x] Deploy marketing website
 
 ---
 
